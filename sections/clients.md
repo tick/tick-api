@@ -42,6 +42,7 @@ Get client
       "count":1,
       "url":"https://www.tickspot.com/api/v2/123/clients/12/projects.json",
       "updated_at":"2014-09-09T13:36:20.000-04:00"
+}
 ```
 
 Restricted Methods

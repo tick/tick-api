@@ -26,7 +26,7 @@ User-Agent: MyCoolApp (me@example.com)
 ```
 Body Format
 ----------
-All data is serialized with JSON and UTF-8 encoded.  This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing or PUTing data into Tick. **All API URLs end in .json to indicate that they accept and return JSON.**
+All data is serialized with JSON and UTF-8 encoded.  This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing or PUTing data into Tick. All API URLs end in .json to indicate that they accept and return JSON.
 
 You'll receive a `415 Unsupported Media Type` response code if you attempt to use a different URL suffix or leave out the `Content-Type` header.
 
