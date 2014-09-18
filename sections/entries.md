@@ -5,9 +5,9 @@ Get entries
 ------------
 
 * `GET /entries.json` will return all time entries that meet the provided parameters
-* Either a ```start_date``` and ```end_date``` have to be provided or an ```updated_at``` time
+* Either a ```start_date``` and ```end_date``` have to be provided **or** an ```updated_at``` time
 * Depending on what parameters are provided:
-  * Entries will be between the ```start_date``` and ```end_date``` range or
+  * Entries will be between the ```start_date``` and ```end_date``` or
   * Entries created or modified after the ```updated_at``` time
 * Each of the following **optional** parameters will further filter the response:
   * ```billable``` (true/false)
@@ -15,16 +15,14 @@ Get entries
   * ```task_id```
   * ```user_id```
   * ```billed``` (true/false)
-* Criteria Examples:
-  * Returns billable time entries between two dates
+* Example returns billable time entries between two dates
 ```shell
 start_date='2014-09-01'&end_date='2014-09-02'&billable=true"
 ```
-  * Returns a user's entries that have been updated after a specific time
+* Example returns a user's entries that have been updated after a specific time
 ```shell
 updated_at='2014-09-18T15:03:20.000-04:00'&user_id=12"
 ```
-
 
 ```json
 
@@ -98,7 +96,7 @@ This will return `201 Created`, with the location of the new entry in the `Locat
 Update entry
 ---------------
 
-* `PUT /entries/235.json` will update the project from the parameters passed
+* `PUT /entries/235.json` will update the entry from the parameters passed
 
 ```json
 {
@@ -107,7 +105,7 @@ Update entry
 }
 ```
 
-This will return `200 OK` if the update was a success along with the current JSON representation of the project.
+This will return `200 OK` if the update was a success along with the current JSON representation of the entry.
 
 Delete entry
 -------------
