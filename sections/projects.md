@@ -108,3 +108,11 @@ Update project
 ```
 
 This will return `200 OK` if the update was a success along with the current JSON representation of the project.
+
+Delete project
+-------------
+
+* `DELETE /projects/16.json` will delete the client
+* **WARNING:** The project **and all time entries** will be immediately deleted
+* If successful `204 No Content` will be returned.
+* If the project client still has associated projects `406 Not Acceptable` will be returned.
