@@ -5,7 +5,7 @@ This is version 2 of the Tick API.  This API has been designed around RESTful co
 
 URL
 ---
-All URLs start with `https://www.tickspot.com//api/v2/9999`. **SSL only**. The path is prefixed with the subscription id and the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
+All URLs start with `https://www.tickspot.com/api/v2/9999`. **SSL only**. The path is prefixed with the subscription id and the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
 
 
 Authentication
