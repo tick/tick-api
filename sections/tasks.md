@@ -98,11 +98,12 @@ Update task
 }
 ```
 
-This will return `200 OK` if the update was a success along with the current JSON representation of the project.
+This will return `200 OK` if the update was a success along with the current JSON representation of the task.
 
 Delete task
 -------------
 
 * `DELETE /tasks/25.json` will delete the task
-* **WARNING:** The task **and all time entries** will be immediately deleted
+* Only tasks **without any entries** can be deleted
 * If successful `204 No Content` will be returned.
+* If the task still has associated entries `406 Not Acceptable` will be returned.
