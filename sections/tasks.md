@@ -62,7 +62,7 @@ Get task
       "url":"https://www.tickspot.com/api/v2/123/tasks/16/entries.json",
       "updated_at":"2014-09-18T15:03:21.000-04:00"
     }
-  "project"
+  "project":
     {
       "id":16,
       "name":"Build Death Star",
