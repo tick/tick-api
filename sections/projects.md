@@ -62,7 +62,7 @@ Get project
   "total_hours":22.0,
   "tasks":
     {
-      "count":0,
+      "count":1,
       "url":"https://www.tickspot.com/api/v2/123/projects/14/tasks.json",
       "updated_at":null
     },
