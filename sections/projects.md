@@ -20,7 +20,8 @@ Get projects
     "owner_id":3,
     "url":"https://www.tickspot.com/api/v2/123/projects/16.json",
     "created_at":"2014-09-09T13:36:20.000-04:00",
-    "updated_at":"2014-09-09T13:36:20.000-04:00"},
+    "updated_at":"2014-09-09T13:36:20.000-04:00"
+  },
   {
     "id":4,
     "name":"Clean Up Alderaan",
