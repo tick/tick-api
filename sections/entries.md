@@ -71,6 +71,19 @@ Get entry
   "url":"https://www.tickspot.com/api/v2/123/entries/235.json",
   "created_at":"2014-09-18T15:03:19.000-04:00",
   "updated_at":"2014-09-18T15:03:19.000-04:00"
+  "task":
+    {
+    "id":"24",
+    "name":"Install exhaust port",
+    "budget":14.0,
+    "position":1,
+    "project_id":16,
+    "date_closed":null,
+    "billable":true,
+    "url":"https://www.tickspot.com/api/v2/123/tasks/24.json",
+    "created_at":"2014-09-18T15:03:18.000-04:00",
+    "updated_at":"2014-09-18T15:03:18.000-04:00"
+    },
 }
 ```
 
