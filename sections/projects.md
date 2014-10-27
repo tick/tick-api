@@ -65,6 +65,14 @@ Get project
       "count":0,
       "url":"https://www.tickspot.com/api/v2/123/projects/14/tasks.json",
       "updated_at":null
+    },
+  "client":
+    {
+      "id":12,
+      "name":"Empire",
+      "archive":false,
+      "url":"https://www.tickspot.com/api/v2/123/clients/12.json",
+      "updated_at":"2014-09-15T10:32:46.000-04:00"
     }
 }
 ```
