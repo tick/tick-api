@@ -17,7 +17,7 @@ Tick uses a simple token-based HTTP Authentication scheme. For clients to authen
 Authorization: Token ApV99yzvwApV99yzvwApV99yzvwApV99yzvw
 ```
 
-To retrieve your token check out the [roles](http://www.tickspot.com/help) section.
+To retrieve your token check out the [roles](https://github.com/tick/tick-api/blob/master/sections/roles.md) section.
 
 User Agent
 ----------
