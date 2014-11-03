@@ -5,11 +5,14 @@ Get entries
 ------------
 
 * `GET /entries.json` will return all time entries that meet the provided parameters
+* `GET /users/4/entries.json`
+* `GET /projects/16/entries.json`
+* `GET /tasks/24/entries.json`
 * Either a ```start_date``` and ```end_date``` have to be provided **or** an ```updated_at``` time
 * Depending on what parameters are provided:
   * Entries will be between the ```start_date``` and ```end_date``` or
   * Entries created or modified after the ```updated_at``` time
-* Each of the following **optional** parameters will further filter the response:
+* Each of the following **optional** parameters can be used to filter the response:
   * ```billable``` (true/false)
   * ```project_id```
   * ```task_id```
