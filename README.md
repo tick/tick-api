@@ -5,7 +5,7 @@ This is version 2 of the Tick API.  This API has been designed around RESTful co
 
 URL
 ---
-All URLs start with `https://www.tickspot.com/api/v2/9999`. **SSL only**. The path is prefixed with the subscription id and the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
+All URLs start with `https://www.tickspot.com/9999/api/v2/`. **SSL only**. The path is prefixed with the subscription id and the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
 
 
 Authentication
@@ -57,7 +57,7 @@ Pagination
 ----------
 
 Most collection APIs paginate their results. The first request returns up to
-50 records. Check the next page for more results by adding `&page=2`, then
+100 records. Check the next page for more results by adding `&page=2`, then
 `&page=3`, and so on until you get an empty response.
 
 Use HTTP caching
