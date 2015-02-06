@@ -29,7 +29,7 @@ Get clients
 
 Get client
 ----------
-* `GET /client/12.json` will return the specified client along with a summary of project information.
+* `GET /clients/12.json` will return the specified client along with a summary of project information.
 
 ```json
 {
