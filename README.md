@@ -11,10 +11,10 @@ All URLs start with `https://www.tickspot.com/9999/api/v2/`. **SSL only**. The p
 Authentication
 --------------
 
-Tick uses a simple token-based HTTP Authentication scheme. For clients to authenticate, the token key should be included in the Authorization HTTP header. The key should be prefixed by the string literal "Token", with whitespace separating the two strings. For example:
+Tick uses a simple token-based HTTP Authentication scheme. For clients to authenticate, the method "Token" and the token key should be included in the Authorization HTTP header. The key should be prefixed by the string literal "token=" with no whitespace. For example:
 
 ```shell
-Authorization: Token ApV99yzvwApV99yzvwApV99yzvwApV99yzvw
+Authorization: Token token=ApV99yzvwApV99yzvwApV99yzvwApV99yzvw
 ```
 
 To retrieve your token check out the [roles](https://github.com/tick/tick-api/blob/master/sections/roles.md) section.
