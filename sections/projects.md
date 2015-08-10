@@ -4,7 +4,10 @@ Projects
 Get projects
 ------------
 
-* `GET /projects.json` will return up to 100 opened projects. Check the next page for more results by adding the `page` parameter to your request.  For example, `page=2`, then `page=3`, and so on until you get an empty response.
+* `GET /projects.json` will return opened projects.
+* `GET /projects/closed.json` will return closed projects.
+
+* The first request returns up to 100 records and you can check the next page for more results by adding the `page` parameter to your request.  For example, `page=2`, then `page=3`, and so on until you get an empty response.
 
 ```json
 [
