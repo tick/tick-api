@@ -102,7 +102,7 @@ Create entry
   "hours":1.5,
   "notes":"Chasing Ewoks",
   "task_id":24,
-  "user_id":4,
+  "user_id":4
 }
 ```
 
