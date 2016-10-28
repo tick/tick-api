@@ -61,7 +61,7 @@ updated_at='2014-09-18T15:03:20.000-04:00'&user_id=12"
 Get entry
 -----------
 
-* `GET /entry/235.json` will return the specified entry
+* `GET /entries/235.json` will return the specified entry
 
 ```json
 {
