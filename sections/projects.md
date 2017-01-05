@@ -93,13 +93,16 @@ Create project
 
 ```json
 {
-  "name":"Prepare Star Destroyer",
-  "budget":50.0,
-  "notifications":false,
-  "billable":true,
-  "recurring":false,
-  "client_id":12,
-  "owner_id":3
+  "project":
+    {
+      "name":"Prepare Star Destroyer",
+			"budget":50.0,
+			"notifications":false,
+      "billable":true,
+      "recurring":false,
+      "client_id":12,
+      "owner_id":3
+		}
 }
 ```
 
@@ -113,8 +116,11 @@ Update project
 
 ```json
 {
-  "budget":300,
-  "billable":false
+  "project":
+    {
+      "budget":300,
+      "billable":true
+		}
 }
 ```
 
