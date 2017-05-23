@@ -27,3 +27,22 @@ Get users
   }
 ]
 ```
+
+Get deleted users
+------------
+
+* `GET /users/deleted.json` will return users who have been deleted from the subscription and have time entries
+* Non-administrators will not have access
+
+```json
+[
+  {
+    "id":5,
+    "first_name":"Darth",
+    "last_name":"Vader",
+    "email":"dv@tickspot.com",
+    "timezone":"Death Star",
+    "updated_at":"2014-11-19T12:53:46.000-05:00"
+  }
+]
+```
