@@ -46,3 +46,22 @@ Get deleted users
   }
 ]
 ```
+
+Create user
+------------
+
+* `POST /users.json` will create a user on the subscription
+* Only administrators will be able to create users
+
+```json
+{ 
+"user":
+   {
+    "first_name":"Anakin",
+    "last_name":"Skywalker",
+    "email":"admin@tickspot.com",
+    "admin":"true",
+    "billable_rate": "100.0"
+   }
+ }
+```
