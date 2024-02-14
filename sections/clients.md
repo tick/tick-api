@@ -5,7 +5,7 @@ Get clients
 ------------
 
 * `GET /clients.json` will return all the clients that have opened projects.
-
+* `GET /clients/all.json` will return all the clients.
 ```json
 [
   {
