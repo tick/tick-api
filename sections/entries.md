@@ -8,24 +8,24 @@ Get entries
 * `GET /users/4/entries.json`
 * `GET /projects/16/entries.json`
 * `GET /tasks/24/entries.json`
-* Either a ```start_date``` and ```end_date``` have to be provided **or** an ```updated_at``` time
-* Depending on what parameters are provided:
-  * Entries will be between the ```start_date``` and ```end_date``` or
-  * Entries created or modified after the ```updated_at``` time
-* Each of the following **optional** parameters can be used to filter the response:
-  * ```billable``` (true/false)
-  * ```project_id```
-  * ```task_id```
-  * ```user_id```
-  * ```billed``` (true/false)
-* Example returns billable time entries between two dates
-```shell
-start_date='2014-09-01'&end_date='2014-09-02'&billable=true"
+
+Supply both `start_date` and `end_date` to select entries by date. The range includes both dates. Alternatively, supply `updated_at` to select entries created or modified after the given timestamp. Optional filters are `billable` and `billed` (true or false), `project_id`, `task_id`, and `user_id`.
+
+Each page returns up to 100 entries. For a range spanning several months or years, repeat the same query with `page=2`, then `page=3`, until the API returns `[]`.
+
+For example, to get the second page of billable entries for September 2014, use this path.
+
+```http
+GET /entries.json?start_date=2014-09-01&end_date=2014-09-30&billable=true&page=2
 ```
-* Example returns a user's entries that have been updated after a specific time
-```shell
-updated_at='2014-09-18T15:03:20.000-04:00'&user_id=12"
+
+To get entries for user 12 that changed after a specific time, use this path.
+
+```http
+GET /entries.json?updated_at=2014-09-18T15:03:20-04:00&user_id=12
 ```
+
+The response reports `hours` rounded to four decimal places.
 
 ```json
 
@@ -37,7 +37,7 @@ updated_at='2014-09-18T15:03:20.000-04:00'&user_id=12"
     "notes":"Stocking up on Bacta.",
     "task_id":24,
     "user_id":4,
-    "url":"https://www.tickspot.com/api/v2/123/entries/234.json",
+    "url":"https://www.tickspot.com/123/api/v2/entries/234.json",
     "created_at":"2014-09-18T15:03:19.000-04:00",
     "updated_at":"2014-09-18T15:03:19.000-04:00"
   },
@@ -49,7 +49,7 @@ updated_at='2014-09-18T15:03:20.000-04:00'&user_id=12"
     "notes":"Making the Kessel run.",
     "task_id":24,
     "user_id":4,
-    "url":"https://www.tickspot.com/api/v2/123/entries/235.json",
+    "url":"https://www.tickspot.com/123/api/v2/entries/235.json",
     "created_at":"2014-09-18T15:03:19.000-04:00",
     "updated_at":"2014-09-18T15:03:19.000-04:00"
   }
@@ -71,7 +71,7 @@ Get entry
   "notes":"Making the Kessel run.",
   "task_id":24,
   "user_id":4,
-  "url":"https://www.tickspot.com/api/v2/123/entries/235.json",
+  "url":"https://www.tickspot.com/123/api/v2/entries/235.json",
   "created_at":"2014-09-18T15:03:19.000-04:00",
   "updated_at":"2014-09-18T15:03:19.000-04:00",
   "task":
@@ -83,10 +83,10 @@ Get entry
     "project_id":16,
     "date_closed":null,
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/24.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/24.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
-    },
+    }
 }
 ```
 

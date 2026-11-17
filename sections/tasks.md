@@ -17,7 +17,7 @@ Get tasks
     "project_id":16,
     "date_closed":null,
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/28.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/25.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   },
@@ -29,7 +29,7 @@ Get tasks
     "project_id":16,
     "date_closed":null,
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/28.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/26.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   }
@@ -52,7 +52,7 @@ Get closed tasks
     "project_id":16,
     "date_closed":"2014-09-18",
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/28.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/25.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   },
@@ -64,7 +64,7 @@ Get closed tasks
     "project_id":16,
     "date_closed":"2014-09-18",
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/28.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/26.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   }
@@ -86,14 +86,13 @@ Get task
   "project_id":16,
   "date_closed":null,
   "billable":true,
-  "url":"https://www.tickspot.com/api/v2/123/tasks/28.json",
   "created_at":"2014-09-18T15:03:18.000-04:00",
   "updated_at":"2014-09-18T15:03:18.000-04:00",
   "total_hours":12.388,
   "entries":
     {
       "count":5,
-      "url":"https://www.tickspot.com/api/v2/123/tasks/16/entries.json",
+      "url":"https://www.tickspot.com/123/api/v2/tasks/25/entries.json",
       "updated_at":"2014-09-18T15:03:21.000-04:00"
     },
   "project":
@@ -107,7 +106,7 @@ Get task
       "recurring":false,
       "client_id":12,
       "owner_id":3,
-      "url":"https://www.tickspot.com/api/v2/123/projects/16.json",
+      "url":"https://www.tickspot.com/123/api/v2/projects/16.json",
       "created_at":"2014-09-09T13:36:20.000-04:00",
       "updated_at":"2014-09-09T13:36:20.000-04:00"
     }
@@ -116,7 +115,7 @@ Get task
 
 Restricted Methods
 ----
-The following methods **(create, update, and destroy)** are limited strictly to administrators on the subscription.  If a non-administrator calls these methods a `403 Forbidden` will be returned.
+Only subscription administrators can create, update, and delete tasks. Other users receive `401 Unauthorized`.
 
 Create task
 --------------
@@ -128,7 +127,7 @@ Create task
   "name":"Seriously shield exhaust port",
   "budget":1.0,
   "project_id":16,
-  "billable":true,
+  "billable":true
 }
 ```
 
