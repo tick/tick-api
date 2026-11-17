@@ -61,15 +61,16 @@ Create user
 * `POST /users.json` will create a user on the subscription
 * Only administrators will be able to create users
 
+Send the user attributes inside a `user` object. Use a JSON boolean for `admin` and a number for `billable_rate`. Tick also accepts `"true"` or `"false"` for `admin` and a numeric string for `billable_rate`.
+
 ```json
-{ 
-"user":
-   {
-    "first_name":"Anakin",
-    "last_name":"Skywalker",
-    "email":"admin@tickspot.com",
-    "admin":"true",
-    "billable_rate": "100.0"
-   }
- }
+{
+  "user": {
+    "first_name": "Anakin",
+    "last_name": "Skywalker",
+    "email": "admin@tickspot.com",
+    "admin": true,
+    "billable_rate": 100.0
+  }
+}
 ```

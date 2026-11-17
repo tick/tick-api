@@ -5,7 +5,9 @@ Get clients
 ------------
 
 * `GET /clients.json` will return all the clients that have opened projects.
+* `GET /clients/closed.json` returns each client with at least one closed project visible to you. A client appears once even if several projects qualify.
 * `GET /clients/all.json` will return all the clients.
+
 ```json
 [
   {

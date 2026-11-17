@@ -5,7 +5,9 @@ Get tasks
 ------------
 
 * `GET /projects/16/tasks.json` will return all opened tasks for the project.
-* `GET /tasks.json` will return all opened tasks across all projects.
+* `GET /tasks.json` returns opened tasks across projects visible to you.
+
+Task lists ignore `user_id`. To find tasks for a specific user as an administrator, check the [users assigned to each project](projects.md#get-project-users), then request the tasks for matching projects.
 
 ```json
 [

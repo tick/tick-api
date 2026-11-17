@@ -7,7 +7,9 @@ Get projects
 * `GET /projects.json` will return opened projects.
 * `GET /projects/closed.json` returns closed projects visible to the authenticated user. Administrators see all closed projects in the subscription. Other users see only their assigned closed projects.
 
-* The first request returns up to 100 records and you can check the next page for more results by adding the `page` parameter to your request.  For example, `page=2`, then `page=3`, and so on until you get an empty response.
+Project lists ignore `user_id`. Administrators can look up the [users assigned to each project](#get-project-users).
+
+The first request returns up to 100 records and you can check the next page for more results by adding the `page` parameter to your request.  For example, `page=2`, then `page=3`, and so on until you get an empty response.
 
 ```json
 [
