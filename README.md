@@ -5,19 +5,19 @@ This is version 2 of the Tick API.  This API has been designed around RESTful co
 
 URL
 ---
-All URLs start with `https://www.tickspot.com/9999/api/v2/`. **SSL only**. The path is prefixed with the subscription id and the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
+Subscription URLs start with `https://www.tickspot.com/9999/api/v2/`. **SSL only**. The path is prefixed with the subscription id and the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
 
 
 Authentication
 --------------
 
-Tick uses a simple token-based HTTP Authentication scheme. For clients to authenticate, the method "Token" and the token key should be included in the Authorization HTTP header. The key should be prefixed by the string literal "token=" with no whitespace. For example:
+To get your subscription ID and token, send your email and password with HTTP Basic authentication to `GET https://www.tickspot.com/api/v2/roles.json`. For subscription requests, the method "Token" and the token key should be included in the Authorization HTTP header. The key should be prefixed by the string literal "token=" with no whitespace. For example:
 
 ```shell
 Authorization: Token token=ApV99yzvwApV99yzvwApV99yzvwApV99yzvw
 ```
 
-To retrieve your token check out the [roles](https://github.com/tick/tick-api/blob/master/sections/roles.md) section.
+See the [roles reference](sections/roles.md) for a request example.
 
 User Agent
 ----------
