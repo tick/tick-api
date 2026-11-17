@@ -5,7 +5,7 @@ This is version 2 of the Tick API.  This API has been designed around RESTful co
 
 URL
 ---
-Subscription URLs start with `https://www.tickspot.com/9999/api/v2/`. **SSL only**. The path is prefixed with the subscription id and the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
+Use HTTPS. Subscription URLs start with `https://www.tickspot.com/api/v2/{subscription_id}/`. For example, the URL for client 12 in subscription 1 is `https://www.tickspot.com/api/v2/1/clients/12.json`. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
 
 
 Authentication
@@ -34,7 +34,7 @@ Browsers set their own `User-Agent`. Send your application name and contact emai
 
 ```javascript
 const response = await fetch(
-  `https://www.tickspot.com/${subscriptionId}/api/v2/projects.json`,
+  `https://www.tickspot.com/api/v2/${subscriptionId}/projects.json`,
   {
     headers: {
       Authorization: `Token token=${token}`,
@@ -52,12 +52,12 @@ You'll receive a `415 Unsupported Media Type` response code if you attempt to us
 
 Sample GET
 -------
-To make a request for all the projects on your subscription, you'd append the projects index path to the base url to form something like https://www.tickspot.com/999999999/api/v2/projects.json. In cURL, that looks like:
+To make a request for all the projects on your subscription, you'd append the projects index path to the base url to form something like https://www.tickspot.com/api/v2/999999999/projects.json. In cURL, that looks like:
 
 ```shell
 curl -H "Authorization: Token token=ApV99yzvwApV99yzvwApV99yzvwApV99yzvw" \
      -H 'User-Agent: MyCoolApp (developer@example.org)' \
-  https://www.tickspot.com/999999999/api/v2/projects.json
+  https://www.tickspot.com/api/v2/999999999/projects.json
 ```
 Sample POST
 ------------
@@ -68,7 +68,7 @@ curl -H "Authorization: Token token=ApV99yzvwApV99yzvwApV99yzvwApV99yzvw" \
      -H 'Content-Type: application/json' \
      -H 'User-Agent: MyCoolApp (developer@example.org)' \
      -d '{ "project": { "name": "My new project!", "client_id": 999, "owner_id": 4 } }' \
-  https://www.tickspot.com/999999999/api/v2/projects.json
+  https://www.tickspot.com/api/v2/999999999/projects.json
 ```
 
 Pagination
