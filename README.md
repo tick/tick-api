@@ -61,13 +61,13 @@ curl -H "Authorization: Token token=ApV99yzvwApV99yzvwApV99yzvwApV99yzvw" \
 ```
 Sample POST
 ------------
-To create something, it's the same deal except you also have to include the `Content-Type` header and the JSON data:
+To create a project, use an administrator's token. Supply the client ID and the user ID of an owner from the same subscription.
 
 ```shell
 curl -H "Authorization: Token token=ApV99yzvwApV99yzvwApV99yzvwApV99yzvw" \
      -H 'Content-Type: application/json' \
      -H 'User-Agent: MyCoolApp (developer@example.org)' \
-     -d '{ "name": "My new project!", "client_id": "999" }' \
+     -d '{ "project": { "name": "My new project!", "client_id": 999, "owner_id": 4 } }' \
   https://www.tickspot.com/999999999/api/v2/projects.json
 ```
 
