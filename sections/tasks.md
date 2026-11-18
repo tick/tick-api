@@ -19,7 +19,7 @@ Task lists ignore `user_id`. To find tasks for a specific user as an administrat
     "project_id":16,
     "date_closed":null,
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/25.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/25.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   },
@@ -31,7 +31,7 @@ Task lists ignore `user_id`. To find tasks for a specific user as an administrat
     "project_id":16,
     "date_closed":null,
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/26.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/26.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   }
@@ -54,7 +54,7 @@ Get closed tasks
     "project_id":16,
     "date_closed":"2014-09-18",
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/25.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/25.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   },
@@ -66,7 +66,7 @@ Get closed tasks
     "project_id":16,
     "date_closed":"2014-09-18",
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/26.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/26.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
   }
@@ -94,7 +94,7 @@ Get task
   "entries":
     {
       "count":5,
-      "url":"https://www.tickspot.com/api/v2/123/tasks/25/entries.json",
+      "url":"https://www.tickspot.com/123/api/v2/tasks/25/entries.json",
       "updated_at":"2014-09-18T15:03:21.000-04:00"
     },
   "project":
@@ -108,7 +108,7 @@ Get task
       "recurring":false,
       "client_id":12,
       "owner_id":3,
-      "url":"https://www.tickspot.com/api/v2/123/projects/16.json",
+      "url":"https://www.tickspot.com/123/api/v2/projects/16.json",
       "created_at":"2014-09-09T13:36:20.000-04:00",
       "updated_at":"2014-09-09T13:36:20.000-04:00"
     }

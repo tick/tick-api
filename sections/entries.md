@@ -37,7 +37,7 @@ The response reports `hours` rounded to four decimal places.
     "notes":"Stocking up on Bacta.",
     "task_id":24,
     "user_id":4,
-    "url":"https://www.tickspot.com/api/v2/123/entries/234.json",
+    "url":"https://www.tickspot.com/123/api/v2/entries/234.json",
     "created_at":"2014-09-18T15:03:19.000-04:00",
     "updated_at":"2014-09-18T15:03:19.000-04:00"
   },
@@ -49,7 +49,7 @@ The response reports `hours` rounded to four decimal places.
     "notes":"Making the Kessel run.",
     "task_id":24,
     "user_id":4,
-    "url":"https://www.tickspot.com/api/v2/123/entries/235.json",
+    "url":"https://www.tickspot.com/123/api/v2/entries/235.json",
     "created_at":"2014-09-18T15:03:19.000-04:00",
     "updated_at":"2014-09-18T15:03:19.000-04:00"
   }
@@ -71,7 +71,7 @@ Get entry
   "notes":"Making the Kessel run.",
   "task_id":24,
   "user_id":4,
-  "url":"https://www.tickspot.com/api/v2/123/entries/235.json",
+  "url":"https://www.tickspot.com/123/api/v2/entries/235.json",
   "created_at":"2014-09-18T15:03:19.000-04:00",
   "updated_at":"2014-09-18T15:03:19.000-04:00",
   "task":
@@ -83,7 +83,7 @@ Get entry
     "project_id":16,
     "date_closed":null,
     "billable":true,
-    "url":"https://www.tickspot.com/api/v2/123/tasks/24.json",
+    "url":"https://www.tickspot.com/123/api/v2/tasks/24.json",
     "created_at":"2014-09-18T15:03:18.000-04:00",
     "updated_at":"2014-09-18T15:03:18.000-04:00"
     }
