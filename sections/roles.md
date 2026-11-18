@@ -5,7 +5,7 @@ Unlike other areas of the API, a username and password must be provided using ba
 
 ```shell
 curl -u "email_address:password" \
-     -H 'User-Agent: MyCoolApp (me@example.com)' \
+     -H 'User-Agent: MyCoolApp (developer@example.org)' \
   https://www.tickspot.com/api/v2/roles.json
 ```
 
