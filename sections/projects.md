@@ -7,7 +7,36 @@ Get projects
 * `GET /projects.json` will return opened projects.
 * `GET /projects/closed.json` returns closed projects visible to the authenticated user. Administrators see all closed projects in the subscription. Other users see only their assigned closed projects.
 
-Project lists ignore `user_id`. Administrators can look up the [users assigned to each project](#get-project-users).
+Add `user_id=4` to return only projects assigned to user 4. Administrators can filter by any current user in the subscription. Other users can filter only by their own user ID. Unknown users, users outside the subscription, and another user's ID supplied by a non-administrator return `404 Not Found`. A malformed ID returns `400 Bad Request`.
+
+The filter uses explicit project assignments, including for administrators, and never expands the caller's access. It applies to open and closed project lists and can be combined with `client_id` or the nested client URL. Administrators can also inspect the [users assigned to each project](#get-project-users).
+
+Budget summaries
+----------------
+
+Add `include_budget=true` to an open or closed project list to include `total_hours` and `budget_remaining` on each returned project. The option also works with `user_id` and nested client URLs.
+
+```http
+GET /projects.json?user_id=4&include_budget=true&page=1
+```
+
+The additional fields look like this:
+
+```json
+{
+  "total_hours": 22.125,
+  "budget_remaining": 127.875
+}
+```
+
+Both values are numbers rounded to three decimal places. Totals include all recorded entries for the project across users, dates, and open or closed tasks. The `user_id` filter selects projects; it does not limit the hours to that user. Timers do not count until saved as entries.
+
+Remaining hours equal the project's budget minus its recorded hours. An exceeded budget produces a negative value. A null budget produces null remaining hours. Projects without entries have zero recorded hours.
+
+Omit `include_budget` or set it to `false` to keep the standard response. Values other than `true` or `false` return `400 Bad Request`. Each page still returns at most 100 projects.
+
+Standard response
+-----------------
 
 The first request returns up to 100 records and you can check the next page for more results by adding the `page` parameter to your request.  For example, `page=2`, then `page=3`, and so on until you get an empty response.
 
