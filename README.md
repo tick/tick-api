@@ -84,6 +84,20 @@ Use HTTP caching
 You must make use of the HTTP freshness headers to lessen the load on our servers (and increase the speed of your application!). Most requests we return will include an `ETag` or `Last-Modified` header. When you first request a resource, store this value, and then submit them back to us on subsequent requests as `If-None-Match` and `If-Modified-Since`. If the resource hasn't changed, you'll see a `304 Not Modified` response, which saves you the time and bandwidth of sending something you already have.
 
 
+Rate limits
+-----------
+
+Authenticated requests have a limit of **600 requests per minute per user**. The allowance is shared across subscriptions, API tokens, endpoints, and API versions, including legacy v1 requests and the v2 roles endpoint.
+
+All API requests also count toward a limit of **6,000 requests per minute per IP address**. This includes failed authentication and requests to endpoints that do not require authentication. Applications and users that share an IP address share this allowance.
+
+Each 60-second window starts with the first counted request. Requests that return `304 Not Modified` still count toward the limits.
+
+When either limit is exceeded, Tick returns `429 Too Many Requests` before running the requested action. The response includes `Retry-After: 60`. Wait at least the number of seconds in `Retry-After` before retrying. Browser clients can read this header through CORS.
+
+Spread large imports and syncs over time. Changing endpoints, subscriptions, or API versions does not give the same user a separate allowance.
+
+
 Handling errors
 ---------------
 
