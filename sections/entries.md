@@ -58,6 +58,13 @@ The response reports `hours` rounded to four decimal places.
 ```
 
 
+Get this week's entries
+-----------------------
+
+`GET /entries/this_week.json` returns the authenticated user's entries for Monday through Sunday of the current week, using the subscription's time zone. It returns all matching entries in one array and ignores `page` and the supplied `user_id`, including for administrators.
+
+The endpoint sets `start_date` and `end_date` for you. Omit `updated_at` when requesting this week: supplying it selects entries modified after that timestamp instead of limiting results to the week. The optional `project_id`, `task_id`, `billable`, and `billed` filters still apply.
+
 Get entry
 -----------
 

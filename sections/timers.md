@@ -1,6 +1,42 @@
 Timers
 ======
 
+Get timers
+----------
+
+* `GET /timers.json` returns all timers for the authenticated user on this subscription in one array. It does not paginate.
+* `GET /timers/7.json` returns one of those timers. A timer outside that scope returns `404 Not Found`, including when the caller is an administrator.
+
+```json
+{
+  "id": 7,
+  "task_id": 24,
+  "last_started_at": "2026-11-18T09:30:00-05:00",
+  "accumulated_seconds": 600,
+  "notes": "Inspect the exhaust port",
+  "role_id": 4,
+  "updated_at": "2026-11-18T09:30:00-05:00"
+}
+```
+
+`accumulated_seconds` contains time accumulated before the current run. For a running timer, add the elapsed seconds since `last_started_at` to display the elapsed time. A paused timer has a null `last_started_at`. Tick caps a timer at 24 hours when calculating its elapsed time.
+
+Update a timer
+--------------
+
+`PUT /timers/7.json` updates the task, notes, or both for one of your timers on this subscription. The task must belong to the subscription. The response is the updated timer with `200 OK`.
+
+```json
+{
+  "timer": {
+    "task_id": 24,
+    "notes": "Inspect the repaired exhaust port"
+  }
+}
+```
+
+This endpoint accepts only `task_id` and `notes`. Use the start and pause endpoints to change the timer's running state.
+
 Create a running timer
 ----------------------
 
