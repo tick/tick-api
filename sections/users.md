@@ -1,6 +1,21 @@
 Users
 ========
 
+Get the signed-in user
+----------------------
+
+`GET /me.json` returns the person who authenticated the request. The `company` field is the name of the subscription in the request URL.
+
+```json
+{
+  "id": 4,
+  "first_name": "Lee",
+  "last_name": "Park",
+  "email": "lee@example.test",
+  "company": "Harbor Studio"
+}
+```
+
 Get users
 ------------
 
