@@ -58,6 +58,20 @@ The response reports `hours` rounded to four decimal places.
 ```
 
 
+### Keep an export up to date
+
+For the first export, page through the date range you need. Record the UTC time when you **start** the export. After every page has been saved successfully, keep that time for the next run.
+
+On subsequent runs, request entries changed since the previous run. For example, if the previous run started at noon UTC, this request includes a one-minute overlap:
+
+```http
+GET /entries.json?updated_at=2026-01-15T11:59:00Z&page=1
+```
+
+Use the same timestamp on every page until you receive an empty array. Insert or replace entries by `id` so records returned during the overlap can be processed twice. Advance the saved time to the start of this run only after all pages succeed. If a run fails, retry from the previous saved time.
+
+The `updated_at` filter selects by modification time regardless of the entry’s work date. If the export covers a fixed date range, check each returned entry’s `date` locally, including entries edited to fall outside the range. Deleted entries are absent from the response. Periodically compare the date-range export with your local copy if you need to detect removals or reconcile records that changed during pagination.
+
 Get this week's entries
 -----------------------
 
